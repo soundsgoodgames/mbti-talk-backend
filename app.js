@@ -5,18 +5,12 @@ require("dotenv").config();
 // to enable access to the backend
 const cors = require("cors");
 const app = express();
-// app.use(cors());                 1/3
-app.use(cors({ origin: '*' }));
+app.use(cors())
 
-// Chat gpt solution for CORS error 2/3
-app.get("/", (req, res) => {
-  res.send("CORS is enabled on this server");
-});
-
-// Chat gpt solution for CORS error 3/3
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// CORS error
+app.get('/api', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.send(data);
 });
 
 mongoose
