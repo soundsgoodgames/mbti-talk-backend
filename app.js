@@ -5,7 +5,7 @@ require("dotenv").config();
 // to enable access to the backend
 const cors = require("cors");
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // Chat gpt solution for CORS error 1/2
 app.get("/", (req, res) => {
