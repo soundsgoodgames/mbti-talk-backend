@@ -6,8 +6,7 @@ require("dotenv").config();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        //origin:"http://localhost:3000"
-        origin:"https://mbti-talk.netlify.app/"
+        origin:"http://localhost:3000"
     },
 });
 
